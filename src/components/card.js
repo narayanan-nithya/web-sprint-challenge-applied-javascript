@@ -58,6 +58,21 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  axios.get(`http://localhost:5000/api/articles`).then(res =>{
+    console.log(res.data.articles);
+  })
+  for (let i=0; i<res.data.articles.length; i++){
+    const cardObj = {
+      headline : res.data.articles.headline[i],
+      authorImg : res.data.articles.authorImg[i],
+      authorName : res.data.articles.authorName[i]
+
+
+    }
+    console.log(cardObj)
+  }
+  const newsCard = Card(cardObj)
+  lambdaCard.appendChild(newsCard)
 }
 
 

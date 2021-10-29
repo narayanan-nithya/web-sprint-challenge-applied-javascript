@@ -60,7 +60,7 @@ const tabsAppender = (selector) => {
       console.log(topicArray)
     
   })
-  pageTabs.appendChild(topicArray)
+  pageTabs.appendChild(Tabs(topicArray));
 
 }
 
