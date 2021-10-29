@@ -1,7 +1,7 @@
-import axios from "axios"
+import axios from "axios";
+import { data } from "msw/lib/types/context"
 
-const cardSection = document.querySelector('.cards-container')
-
+const lambdaCard = document.querySelector('.cards-container')
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -42,11 +42,11 @@ const Card = (article) => {
 
 
   mainCard.addEventListener('click', () => {
-   console.log(article.headline)
+   console.log(article)
 
-   
   })
-  return mainCard
+return mainCard;
+  
 }   
 
 const cardAppender = (selector) => {
@@ -58,16 +58,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-  axios.get(`http://localhost:5000/api/${article}`).then(res => { 
-    authorImg.src = res.data.authorPhoto
-    authorName.textContent = res.data.authorName
-    mainCard.textContent = res.data.headline
-  
-  })
-
-  const articleCard = cardSection.appendChild(Tab(mainCard))
-  return articleCard;
-  
 }
 
 
