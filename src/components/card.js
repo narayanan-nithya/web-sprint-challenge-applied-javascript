@@ -41,8 +41,8 @@ const Card = (article) => {
   ImgCard.classList.add('img-container')
 
 
-  mainCard.addEventListener('click', () => {
-   console.log(article)
+  mainCard.addEventListener('click', function (evt) {
+   console.log('target: ${evt.target}')
 
   })
 return mainCard;
